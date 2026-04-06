@@ -63,10 +63,15 @@
   }
   .nav-links a:hover { color: var(--gold); }
 
+  .nav-links li:has(.nav-cta) { border: none; outline: none; }
   .nav-cta {
     font-size: .78rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase;
-    padding: 9px 22px; border: 1.5px solid var(--gold); color: var(--gold);
+    padding: 9px 22px;
+    border: 1.5px solid var(--gold); outline: none;
+    color: var(--gold); background: transparent;
     text-decoration: none; transition: all .25s;
+    display: inline-block; line-height: normal;
+    box-shadow: none;
   }
   .nav-cta:hover { background: var(--gold); color: var(--white); }
 
