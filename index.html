@@ -517,6 +517,80 @@
   .footer-links a { font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.35); text-decoration: none; transition: color .2s; }
   .footer-links a:hover { color: var(--gold); }
 
+  /* ── FLOATING REVIEWS ── */
+  .floating-reviews {
+    position: fixed; left: 0; top: 50%; transform: translateY(-50%);
+    z-index: 999; width: 300px;
+    background: #fff;
+    box-shadow: 2px 4px 24px rgba(0,0,0,.18);
+    border-radius: 0 8px 8px 0;
+    overflow: hidden;
+    font-family: var(--sans);
+    transition: transform .35s cubic-bezier(.4,0,.2,1);
+  }
+  .floating-reviews.minimized { transform: translateY(-50%) translateX(-263px); }
+
+  .fr-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: .7rem 1rem;
+    background: #1a3c6e;
+    border-bottom: 2px solid #2a5298;
+  }
+  .fr-header-left { display: flex; align-items: center; gap: .5rem; }
+  .fr-icon { width: 18px; height: 18px; }
+  .fr-header-title { font-size: .75rem; font-weight: 600; letter-spacing: .06em; color: #fff; }
+  .fr-toggle {
+    background: none; border: none; color: #fff; font-size: 1.2rem;
+    cursor: pointer; line-height: 1; padding: 0 2px; opacity: .8;
+    transition: opacity .2s;
+  }
+  .fr-toggle:hover { opacity: 1; }
+
+  .fr-body {
+    max-height: 420px; overflow-y: auto;
+    scrollbar-width: thin; scrollbar-color: #ddd transparent;
+  }
+  .fr-body::-webkit-scrollbar { width: 4px; }
+  .fr-body::-webkit-scrollbar-thumb { background: #ddd; border-radius: 2px; }
+
+  .fr-review {
+    padding: .9rem 1rem;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .fr-review:last-of-type { border-bottom: none; }
+
+  .fr-review-top {
+    display: flex; align-items: center; gap: .6rem; margin-bottom: .5rem;
+  }
+  .fr-avatar {
+    width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: .75rem; font-weight: 700; color: #fff;
+  }
+  .fr-review-meta { flex: 1; }
+  .fr-name { display: block; font-size: .75rem; font-weight: 600; color: #222; }
+  .fr-time { font-size: .65rem; color: #999; }
+  .fr-source { width: 18px; height: 18px; flex-shrink: 0; }
+
+  .fr-text { font-size: .75rem; line-height: 1.55; color: #444; margin-bottom: .4rem; }
+  .fr-stars { font-size: .85rem; color: #f5a623; letter-spacing: 1px; }
+
+  .fr-footer {
+    padding: .8rem 1rem;
+    background: #f9f9f9;
+    border-top: 1px solid #eee;
+    text-align: center;
+  }
+  .fr-footer a {
+    font-size: .7rem; font-weight: 600; color: #1a3c6e;
+    text-decoration: none; letter-spacing: .04em;
+  }
+  .fr-footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 600px) {
+    .floating-reviews { display: none; }
+  }
+
   /* ── ANIMATIONS ── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(28px); }
@@ -1012,6 +1086,101 @@
   </div>
 </section>
 
+<!-- FLOATING REVIEWS WIDGET -->
+<div id="floatingReviews" class="floating-reviews">
+  <div class="fr-header">
+    <div class="fr-header-left">
+      <svg class="fr-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="var(--gold)" stroke="none"/></svg>
+      <span class="fr-header-title">Patient Reviews</span>
+    </div>
+    <button class="fr-toggle" id="frToggle" aria-label="Minimize reviews">&#8722;</button>
+  </div>
+  <div class="fr-body" id="frBody">
+
+    <div class="fr-review">
+      <div class="fr-review-top">
+        <div class="fr-avatar" style="background:#c0392b;">D</div>
+        <div class="fr-review-meta">
+          <span class="fr-name">Verified Patient</span>
+          <span class="fr-time">Jan 2026</span>
+        </div>
+        <svg class="fr-source" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.545 10.239v3.821h5.445c-.712 2.315-2.647 3.972-5.445 3.972a6.033 6.033 0 110-12.064c1.498 0 2.866.549 3.921 1.453l2.814-2.814A9.969 9.969 0 0012.545 2C7.021 2 2.543 6.477 2.543 12s4.478 10 10.002 10c8.396 0 10.249-7.85 9.426-11.748l-9.426-.013z" fill="#4285F4"/></svg>
+      </div>
+      <p class="fr-text">Dr. Sanchez literally saved my life. Her demeanor, listening skills, clarity, confidence and empathy are beyond words.</p>
+      <div class="fr-stars">★★★★★</div>
+    </div>
+
+    <div class="fr-review">
+      <div class="fr-review-top">
+        <div class="fr-avatar" style="background:#27ae60;">V</div>
+        <div class="fr-review-meta">
+          <span class="fr-name">Verified Patient</span>
+          <span class="fr-time">Mar 2026</span>
+        </div>
+        <svg class="fr-source" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.545 10.239v3.821h5.445c-.712 2.315-2.647 3.972-5.445 3.972a6.033 6.033 0 110-12.064c1.498 0 2.866.549 3.921 1.453l2.814-2.814A9.969 9.969 0 0012.545 2C7.021 2 2.543 6.477 2.543 12s4.478 10 10.002 10c8.396 0 10.249-7.85 9.426-11.748l-9.426-.013z" fill="#4285F4"/></svg>
+      </div>
+      <p class="fr-text">Dr. Sanchez has been wonderful, every time I have come in.</p>
+      <div class="fr-stars">★★★★★</div>
+    </div>
+
+    <div class="fr-review">
+      <div class="fr-review-top">
+        <div class="fr-avatar" style="background:#8e44ad;">V</div>
+        <div class="fr-review-meta">
+          <span class="fr-name">Verified Patient</span>
+          <span class="fr-time">Mar 2026</span>
+        </div>
+        <svg class="fr-source" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.545 10.239v3.821h5.445c-.712 2.315-2.647 3.972-5.445 3.972a6.033 6.033 0 110-12.064c1.498 0 2.866.549 3.921 1.453l2.814-2.814A9.969 9.969 0 0012.545 2C7.021 2 2.543 6.477 2.543 12s4.478 10 10.002 10c8.396 0 10.249-7.85 9.426-11.748l-9.426-.013z" fill="#4285F4"/></svg>
+      </div>
+      <p class="fr-text">Dr. Sanchez is fantastic in every way.</p>
+      <div class="fr-stars">★★★★★</div>
+    </div>
+
+    <div class="fr-review">
+      <div class="fr-review-top">
+        <div class="fr-avatar" style="background:#2980b9;">V</div>
+        <div class="fr-review-meta">
+          <span class="fr-name">Verified Patient</span>
+          <span class="fr-time">Oct 2025</span>
+        </div>
+        <svg class="fr-source" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.545 10.239v3.821h5.445c-.712 2.315-2.647 3.972-5.445 3.972a6.033 6.033 0 110-12.064c1.498 0 2.866.549 3.921 1.453l2.814-2.814A9.969 9.969 0 0012.545 2C7.021 2 2.543 6.477 2.543 12s4.478 10 10.002 10c8.396 0 10.249-7.85 9.426-11.748l-9.426-.013z" fill="#4285F4"/></svg>
+      </div>
+      <p class="fr-text">Thorough, empathetic, and inspiring confidence. I always leave feeling like I'm in the best possible hands.</p>
+      <div class="fr-stars">★★★★★</div>
+    </div>
+
+    <div class="fr-review">
+      <div class="fr-review-top">
+        <div class="fr-avatar" style="background:#16a085;">V</div>
+        <div class="fr-review-meta">
+          <span class="fr-name">Verified Patient</span>
+          <span class="fr-time">Aug 2025</span>
+        </div>
+        <svg class="fr-source" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.545 10.239v3.821h5.445c-.712 2.315-2.647 3.972-5.445 3.972a6.033 6.033 0 110-12.064c1.498 0 2.866.549 3.921 1.453l2.814-2.814A9.969 9.969 0 0012.545 2C7.021 2 2.543 6.477 2.543 12s4.478 10 10.002 10c8.396 0 10.249-7.85 9.426-11.748l-9.426-.013z" fill="#4285F4"/></svg>
+      </div>
+      <p class="fr-text">Knowledgeable, caring, with excellent bedside manner. Takes the time to explain everything clearly.</p>
+      <div class="fr-stars">★★★★★</div>
+    </div>
+
+    <div class="fr-review">
+      <div class="fr-review-top">
+        <div class="fr-avatar" style="background:#d35400;">V</div>
+        <div class="fr-review-meta">
+          <span class="fr-name">Verified Patient</span>
+          <span class="fr-time">Feb 2026</span>
+        </div>
+        <svg class="fr-source" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.545 10.239v3.821h5.445c-.712 2.315-2.647 3.972-5.445 3.972a6.033 6.033 0 110-12.064c1.498 0 2.866.549 3.921 1.453l2.814-2.814A9.969 9.969 0 0012.545 2C7.021 2 2.543 6.477 2.543 12s4.478 10 10.002 10c8.396 0 10.249-7.85 9.426-11.748l-9.426-.013z" fill="#4285F4"/></svg>
+      </div>
+      <p class="fr-text">Very good communication. Pleasant. I felt genuinely heard and cared for throughout my entire visit.</p>
+      <div class="fr-stars">★★★★★</div>
+    </div>
+
+    <div class="fr-footer">
+      <a href="https://doctors.adventisthealth.org/provider/desiree-sanchez/3095153" target="_blank" rel="noopener">See all reviews →</a>
+    </div>
+  </div>
+</div>
+
 <!-- FOOTER -->
 <footer>
   <a href="#" class="footer-logo">Dr. Desiree Sanchez, MD</a>
@@ -1024,6 +1193,14 @@
 </footer>
 
 <script>
+  // Floating reviews toggle
+  const frWidget = document.getElementById('floatingReviews');
+  const frToggle = document.getElementById('frToggle');
+  frToggle.addEventListener('click', () => {
+    const minimized = frWidget.classList.toggle('minimized');
+    frToggle.innerHTML = minimized ? '&#43;' : '&#8722;';
+  });
+
   // Sticky nav shadow
   const nav = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
