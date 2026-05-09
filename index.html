@@ -384,14 +384,33 @@
 
   .reviews-cta {
     text-align: center; margin-top: 3rem;
+    display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;
   }
   .reviews-cta a {
-    display: inline-block; padding: 13px 34px;
+    display: inline-block; padding: 13px 28px;
     border: 1.5px solid rgba(184,155,106,.5); color: var(--gold);
-    font-size: .82rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase;
+    font-size: .78rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase;
     text-decoration: none; transition: all .25s;
   }
   .reviews-cta a:hover { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+
+  .review-card-google {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; gap: .6rem; background: rgba(255,255,255,.07);
+  }
+  .google-card-logo { margin-bottom: .3rem; }
+  .google-card-score {
+    font-family: var(--serif); font-size: 3rem; font-weight: 300;
+    color: var(--gold); line-height: 1;
+  }
+  .google-card-count { font-size: .8rem; color: rgba(255,255,255,.5); letter-spacing: .06em; }
+  .google-card-link {
+    margin-top: .8rem; padding: 10px 22px;
+    border: 1.5px solid rgba(184,155,106,.5); color: var(--gold);
+    font-size: .72rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+    text-decoration: none; transition: all .25s;
+  }
+  .google-card-link:hover { background: var(--gold); color: var(--navy); }
 
   /* ── CONDITIONS ── */
   #conditions {
@@ -839,7 +858,7 @@
         </div>
         <div class="reviews-count">Based on 325 verified patient ratings</div>
       </div>
-      <div class="reviews-source">Adventist Health Verified</div>
+        <div class="reviews-source">Adventist Health · Google Verified</div>
     </div>
   </div>
 
@@ -936,6 +955,83 @@
       </div>
     </div>
 
+    <div class="review-card">
+      <div class="review-stars">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <p class="review-text">Dr. Sanchez is excellent in every way. Knowledgeable, professional and friendly.</p>
+      <div class="review-footer">
+        <span class="review-source-badge">Adventist Health · Verified Patient</span>
+        <span class="review-date">Feb 2026</span>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-stars">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <p class="review-text">I saw Dr. Sanchez and would wholeheartedly recommend her to family and friends.</p>
+      <div class="review-footer">
+        <span class="review-source-badge">Adventist Health · Verified Patient</span>
+        <span class="review-date">Feb 2026</span>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-stars">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <p class="review-text">She prescribed a medication that is really helping me. I am so grateful for her care and expertise.</p>
+      <div class="review-footer">
+        <span class="review-source-badge">Adventist Health · Verified Patient</span>
+        <span class="review-date">Feb 2026</span>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-stars">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <p class="review-text">I recommend Dr. Sanchez for anybody with these issues. She is compassionate and truly listens.</p>
+      <div class="review-footer">
+        <span class="review-source-badge">Adventist Health · Verified Patient</span>
+        <span class="review-date">Mar 2026</span>
+      </div>
+    </div>
+
+    <!-- Google Summary Card -->
+    <div class="review-card review-card-google">
+      <div class="google-card-logo">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="36" height="36"><path d="M12.545 10.239v3.821h5.445c-.712 2.315-2.647 3.972-5.445 3.972a6.033 6.033 0 110-12.064c1.498 0 2.866.549 3.921 1.453l2.814-2.814A9.969 9.969 0 0012.545 2C7.021 2 2.543 6.477 2.543 12s4.478 10 10.002 10c8.396 0 10.249-7.85 9.426-11.748l-9.426-.013z" fill="#4285F4"/></svg>
+      </div>
+      <div class="google-card-score">4.9</div>
+      <div class="review-stars">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <p class="google-card-count">76 Google Reviews</p>
+      <a class="google-card-link" href="https://www.google.com/search?q=Desiree+Sanchez+MD+Urology+Simi+Valley+reviews" target="_blank" rel="noopener">Read All Google Reviews →</a>
+    </div>
+
   </div><!-- end carousel -->
 
   <div class="carousel-controls">
@@ -951,7 +1047,8 @@
   </div><!-- end carousel-wrap -->
 
   <div class="reviews-cta">
-    <a href="https://doctors.adventisthealth.org/provider/desiree-sanchez/3095153" target="_blank" rel="noopener">Read All 69 Reviews on Adventist Health</a>
+    <a href="https://www.google.com/search?q=Desiree+Sanchez+MD+Urology+Simi+Valley+reviews" target="_blank" rel="noopener">Read All Google Reviews</a>
+    <a href="https://doctors.adventisthealth.org/provider/desiree-sanchez/3095153" target="_blank" rel="noopener">Read All Adventist Health Reviews</a>
   </div>
 </section>
 
