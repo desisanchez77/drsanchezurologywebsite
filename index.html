@@ -519,7 +519,7 @@
 
   /* ── FLOATING REVIEWS ── */
   .floating-reviews {
-    position: fixed; left: 0; top: 50%; transform: translateY(-50%);
+    position: fixed; left: 0; top: calc(50% - 50px); transform: translateY(-50%);
     z-index: 999; width: 300px;
     background: #fff;
     box-shadow: 2px 4px 24px rgba(0,0,0,.18);
@@ -576,7 +576,7 @@
   .fr-stars { font-size: .85rem; color: #f5a623; letter-spacing: 1px; }
 
   .floating-google-badge {
-    position: fixed; left: 0; bottom: 80px; z-index: 998;
+    position: fixed; left: 0; bottom: 12px; z-index: 1001;
     display: flex; align-items: center; gap: .7rem;
     padding: .7rem 1rem .7rem .9rem;
     background: #fff;
