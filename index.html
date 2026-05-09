@@ -519,7 +519,7 @@
 
   /* ── FLOATING REVIEWS ── */
   .floating-reviews {
-    position: fixed; left: 10px; top: calc(50% - 50px); transform: translateY(-50%);
+    position: fixed; left: 10px; bottom: 20px;
     z-index: 999; width: 300px;
     background: #fff;
     box-shadow: 2px 4px 24px rgba(0,0,0,.18);
@@ -528,7 +528,7 @@
     font-family: var(--sans);
     transition: transform .35s cubic-bezier(.4,0,.2,1);
   }
-  .floating-reviews.minimized { transform: translateY(-50%) translateX(-263px); }
+  .floating-reviews.minimized { transform: translateX(-263px); }
 
   .fr-header {
     display: flex; align-items: center; justify-content: space-between;
@@ -578,7 +578,7 @@
   .floating-google-badge {
     position: fixed;
     left: 50px;
-    top: calc(50% + 30px);
+    bottom: 115px;
     width: 220px;
     z-index: 1001;
     display: flex; align-items: center; justify-content: center; gap: .7rem;
